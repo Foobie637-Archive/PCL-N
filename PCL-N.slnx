@@ -1,7 +1,5 @@
 <Solution>
   <Configurations>
-    <BuildType Name="Debug" />
-    <BuildType Name="Release" />
     <Platform Name="AnyCPU" />
   </Configurations>
   <Project Path="PCL.Core.Portable\PCL.Core.Portable.csproj" />
@@ -11,6 +9,16 @@
   <Project Path="PCL.Platform\PCL.Platform.csproj" />
   <Project Path="PCL.Platform.Test\PCL.Platform.Test.csproj" />
   <Project Path="PCL.Application\PCL.Application.csproj" />
+  <Folder Name="/external/" />
+  <Folder Name="/external/Jvm.NET/" />
+  <Folder Name="/external/Jvm.NET/src/">
+    <Project Path="external/Jvm.NET/src/Jvm.NET.Asm/Jvm.NET.Asm.csproj">
+      <Platform Project="x64" />
+    </Project>
+    <Project Path="external/Jvm.NET/src/Jvm.NET/Jvm.NET.csproj">
+      <Platform Project="x64" />
+    </Project>
+  </Folder>
   <Project Path="PCL.Application.Test\PCL.Application.Test.csproj" />
   <Project Path="PCL.UI.Abstractions\PCL.UI.Abstractions.csproj" />
   <Project Path="PCL.UI.Next\PCL.UI.Next.csproj" />

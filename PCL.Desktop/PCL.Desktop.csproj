@@ -27,7 +27,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <AvaloniaUseCompiledBindingsByDefault>false</AvaloniaUseCompiledBindingsByDefault>
-    <PublishAot>true</PublishAot>
     <PublishTrimmed>true</PublishTrimmed>
     <TrimMode>link</TrimMode>
     <BuiltInComInteropSupport>false</BuiltInComInteropSupport>
@@ -77,7 +76,10 @@
     <PclLobbyDefaultSecret Condition="'$(PclLobbyDefaultSecret)' == ''">$([System.Environment]::GetEnvironmentVariable('PCL_LOBBY_DEFAULT_SECRET'))</PclLobbyDefaultSecret>
     <PclGithubSha Condition="'$(PclGithubSha)' == ''">$([System.Environment]::GetEnvironmentVariable('PCL_GITHUB_SHA'))</PclGithubSha>
   </PropertyGroup>
-  <!--
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+      <PublishAot>true</PublishAot>
+  </PropertyGroup>
+    <!--
     VideoLAN.LibVLC.Windows enables x64, x86, and ARM64 for AnyCPU projects by
     default. RID-specific publishes only need the matching native distribution;
     including all three adds hundreds of megabytes before single-file compression.
